@@ -32,12 +32,12 @@ public class Candidate {
     public Candidate(){
 
     }
-    public Candidate(String fullName, String companyName, String jobPosition, String work_authorization, Date appliedDate, String jobDescription) {
+    public Candidate(String fullName, String companyName, String jobPosition, String workAuthorization, Date appliedDate, String jobDescription) {
         super();
         this.fullName = fullName;
         this.companyName = companyName;
         this.jobPosition = jobPosition;
-        this.workAuthorization = work_authorization;
+        this.workAuthorization = workAuthorization;
         this.appliedDate = appliedDate;
         this.jobDescription = jobDescription;
     }

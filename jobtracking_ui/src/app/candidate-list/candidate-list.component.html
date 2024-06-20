@@ -1,0 +1,23 @@
+<h2>Candidate List</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Company Name</th>
+            <th>Position</th>
+            <th>Work Authorization</th>
+            <th>Applied Date</th>
+            <th>Job Description</th>
+        </tr>
+    </thead>
+<tbody>
+    <tr *ngFor= "let candidate of candidates" >
+        <td>{{candidate.fullName}}</td>
+        <td>{{candidate.companyName}}</td>
+        <td>{{candidate.jobPosition}}</td>
+        <td>{{candidate.workAuthorization}}</td>
+        <td>{{candidate.appliedDate | date: 'fullDate'}}</td>
+        <td>{{candidate.jobDescription}}</td>
+    </tr>
+</tbody>
+</table>
