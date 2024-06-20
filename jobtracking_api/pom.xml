@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.arsbd</groupId>
-	<artifactId>jobtracking_backend</artifactId>
+	<artifactId>jobtracking_api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>jobtracking</name>
 	<description>Job Tracking Application</description>
