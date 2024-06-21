@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Candidate} from '../candidate';
+import { Candidate } from '../candidate';
 import { CommonModule } from '@angular/common';
-import {CandidateService} from '../candidate.service';
+import { CandidateService } from '../candidate.service';
 import { HttpClientModule } from '@angular/common/http';
 
 @Component({
@@ -9,19 +9,20 @@ import { HttpClientModule } from '@angular/common/http';
   standalone: true,
   imports: [CommonModule, HttpClientModule],
   templateUrl: './candidate-list.component.html',
-  styleUrl: './candidate-list.component.css'
+  styleUrl: './candidate-list.component.css',
 })
-export class CandidateListComponent {
+export class CandidateListComponent implements OnInit {
   candidates: Candidate[];
-  constructor(private candidateService: CandidateService){
+  constructor(
+    private candidateService: CandidateService  ) {
     this.candidates = [];
-   }
-   ngOnInit(): void {
+  }
+  ngOnInit(): void {
     this.getCandidate();
-   }
-private getCandidate(){
-  this.candidateService.getCandidateList().subscribe(data =>{
-    this.candidates = data;
-  })
-}
+  }
+  private getCandidate() {
+    this.candidateService.getCandidateList().subscribe((data) => {
+      this.candidates = data;
+    });
+  }
 }
