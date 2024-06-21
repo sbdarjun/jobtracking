@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import {CandidateListComponent}  from './candidate-list/candidate-list.component'
+import { RouterModule, RouterOutlet, Routes } from '@angular/router';
+import {CandidateListComponent}  from './candidate-list/candidate-list.component';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,CandidateListComponent ],
+  imports: [CandidateListComponent,RouterOutlet],
+  template: '<router-outlet></router-outlet>',
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
