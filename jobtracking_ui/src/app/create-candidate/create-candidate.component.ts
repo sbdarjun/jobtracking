@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Candidate } from '../candidate';
 import { FormsModule } from '@angular/forms';
 import { CandidateService } from '../candidate.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-candidate',
@@ -12,7 +13,7 @@ import { CandidateService } from '../candidate.service';
 })
 export class CreateCandidateComponent implements OnInit {
   candidate: Candidate = {
-    id: 1,
+    id: 0,
     fullName: '',
     companyName: '',
     jobPosition: '',
@@ -20,11 +21,27 @@ export class CreateCandidateComponent implements OnInit {
     appliedDate: new Date(),
     jobDescription: '',
   };
-  constructor(private candidateService: CandidateService) {}
+  constructor(
+    private candidateService: CandidateService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {}
+  saveCandidate() {
+    this.candidateService.createCandidate(this.candidate).subscribe(
+      (data) => {
+        console.log(data);
+        this.goToCandidateList();
+      },
+      (error) => console.log(error)
+    );
+  }
+  goToCandidateList() {
+    this.router.navigate(['/candidates']);
+  }
 
-  onSubmit(): void {
+  onSubmit() {
     console.log(this.candidate);
+    this.saveCandidate();
   }
 }

@@ -15,4 +15,7 @@ export class CandidateService {
   getCandidateList(): Observable<Candidate[]>{
     return this.httpClient.get<Candidate[]>(`${this.baseURL}`);
   }
+  createCandidate(candidate: Candidate): Observable<Object>{
+    return this.httpClient.post(`${this.baseURL}`, candidate);
+  }
 }
