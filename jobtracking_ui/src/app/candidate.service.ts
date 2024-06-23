@@ -22,7 +22,11 @@ export class CandidateService {
     return this.httpClient.get<Candidate>(`${this.baseURL}/${id}`);
   }
 
-  updateCandidate(id: number, candidate: Candidate): Observable<Object>{
+  updateCandidate(id: number, candidate: Candidate): Observable<Object> {
     return this.httpClient.put(`${this.baseURL}/${id}`, candidate);
+  }
+
+  deleteCandidate(id: number): Observable<Object> {
+    return this.httpClient.delete(`${this.baseURL}/${id}`);
   }
 }

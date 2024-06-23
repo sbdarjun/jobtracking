@@ -3,6 +3,7 @@ import { Candidate } from '../candidate';
 import { FormsModule } from '@angular/forms';
 import { CandidateService } from '../candidate.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-create-candidate',
@@ -23,7 +24,8 @@ export class CreateCandidateComponent implements OnInit {
   };
   constructor(
     private candidateService: CandidateService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {}
@@ -32,6 +34,7 @@ export class CreateCandidateComponent implements OnInit {
       (data) => {
         console.log(data);
         this.goToCandidateList();
+        this.toastr.success('Candidate saved successfully!', 'Success');
       },
       (error) => console.log(error)
     );

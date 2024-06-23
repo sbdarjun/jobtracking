@@ -3,6 +3,7 @@ import { CandidateService } from '../candidate.service';
 import { Candidate } from '../candidate';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-update-candidate',
@@ -27,7 +28,8 @@ export class UpdateCandidateComponent implements OnInit {
   constructor(
     private candidateService: CandidateService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -44,6 +46,7 @@ export class UpdateCandidateComponent implements OnInit {
     this.candidateService.updateCandidate(this.id, this.candidate).subscribe(
       (data) => {
         this.goToCandidateList();
+        this.toastr.success('Candidate update successfully!', 'Success');
       },
       (error) => console.log(error)
     );
