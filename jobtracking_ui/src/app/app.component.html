@@ -1,16 +1,18 @@
 <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
-<ul class="navbar-nav">
-  <li class="nav-item">
-    <a [routerLink]="'/candidates'" routerLinkActive="active" class="nav-link">Applied Job List</a>
-  </li>
-  <li class="nav-item">
-    <a [routerLink]="'/create-candidate'" routerLinkActive="active" class="nav-link">Add Candidate</a>
-  </li>
-</ul>
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a [routerLink]="'/candidates'" routerLinkActive="active" class="nav-link">Applied Job List</a>
+    </li>
+    <li class="nav-item">
+      <a [routerLink]="'/create-candidate'" routerLinkActive="active" class="nav-link">Add Candidate</a>
+    </li>
+  </ul>
 </nav>
-<h1 class="text-center"> {{title}} </h1>
-<div class="container">
- <router-outlet></router-outlet>
+<div class="scrollable-table-container">
+  <h1 class="text-center"> {{title}} </h1>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
 </div>
 <footer class="footer">
   <div class="container">

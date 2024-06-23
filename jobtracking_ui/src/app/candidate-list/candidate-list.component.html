@@ -8,6 +8,7 @@
             <th>Work Authorization</th>
             <th>Applied Date</th>
             <th>Job Description</th>
+            <th>Actions</th>
         </tr>
     </thead>
 <tbody>
@@ -18,6 +19,9 @@
         <td>{{candidate.workAuthorization}}</td>
         <td>{{candidate.appliedDate | date: 'fullDate'}}</td>
         <td>{{candidate.jobDescription}}</td>
+        <td>
+            <button (click) = "updateCandidate(candidate.id)" class="btn btn-info">Update</button>
+        </td>
     </tr>
 </tbody>
 </table>

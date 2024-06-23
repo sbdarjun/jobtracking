@@ -3,6 +3,7 @@ import { Candidate } from '../candidate';
 import { CommonModule } from '@angular/common';
 import { CandidateService } from '../candidate.service';
 import { HttpClientModule } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-candidate-list',
@@ -14,7 +15,9 @@ import { HttpClientModule } from '@angular/common/http';
 export class CandidateListComponent implements OnInit {
   candidates: Candidate[];
   constructor(
-    private candidateService: CandidateService  ) {
+    private candidateService: CandidateService,
+    private router: Router
+  ) {
     this.candidates = [];
   }
   ngOnInit(): void {
@@ -24,5 +27,8 @@ export class CandidateListComponent implements OnInit {
     this.candidateService.getCandidateList().subscribe((data) => {
       this.candidates = data;
     });
+  }
+  updateCandidate(id: number) {
+    this.router.navigate(['update-candidate', id]);
   }
 }

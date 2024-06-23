@@ -2,14 +2,36 @@
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 .footer {
-    background-color: #f8f9fa; /* Light grey background */
-    color: #343a40; /* Dark grey text */
-    padding: 20px; /* Padding for spacing */
-    text-align: center; /* Center the text */
-    position: fixed; /* Fixed position at the bottom */
-    bottom: 0; /* Align to bottom */
-    width: 100%; /* Full width */
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    font-family: Arial, sans-serif; /* Font styling */
-    border-top: 1px solid #e7e7e7; /* Border on top */
-  }
+  background-color: #f8f9fa;
+  /* Light grey background */
+  color: #343a40;
+  /* Dark grey text */
+  padding: 10px;
+  /* Padding for spacing */
+  text-align: center;
+  /* Center the text */
+  position: fixed;
+  /* Fixed position at the bottom */
+  bottom: 0;
+  /* Align to bottom */
+  width: 100%;
+  /* Full width */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow for depth */
+  font-family: Arial, sans-serif;
+  /* Font styling */
+  border-top: 1px solid #e7e7e7;
+  /* Border on top */
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.scrollable-table-container {
+  max-height: 600px;
+  /* Adjust the height as needed */
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
