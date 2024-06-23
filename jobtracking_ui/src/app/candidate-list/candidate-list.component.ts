@@ -52,4 +52,8 @@ export class CandidateListComponent implements OnInit {
       }
     });
   }
+
+  candidateDetails(id: number) {
+    this.router.navigate(['candidate-details', id]);
+  }
 }

@@ -1,29 +1,31 @@
 <h4>Applied Job List</h4>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Full Name</th>
-                <th>Company Name</th>
-                <th>Position</th>
-                <th>Work Authorization</th>
-                <th>Applied Date</th>
-                <th>Job Description</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let candidate of candidates">
-                <td>{{candidate.fullName}}</td>
-                <td>{{candidate.companyName}}</td>
-                <td>{{candidate.jobPosition}}</td>
-                <td>{{candidate.workAuthorization}}</td>
-                <td>{{candidate.appliedDate | date: 'fullDate'}}</td>
-                <td>{{candidate.jobDescription}}</td>
-                <td>
-                    <button (click)="updateCandidate(candidate.id)" class="btn btn-info"
-                        style="margin-bottom: 15px">Update</button>
-                    <button (click)="deleteCandidate(candidate.id)" class="btn btn-danger">Delete</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Company Name</th>
+            <th>Position</th>
+            <th>Work Authorization</th>
+            <th>Applied Date</th>
+            <th>Job Description</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let candidate of candidates">
+            <td>{{candidate.fullName}}</td>
+            <td>{{candidate.companyName}}</td>
+            <td>{{candidate.jobPosition}}</td>
+            <td>{{candidate.workAuthorization}}</td>
+            <td>{{candidate.appliedDate | date: 'fullDate'}}</td>
+            <td>{{candidate.jobDescription}}</td>
+            <td>
+                <button (click)="updateCandidate(candidate.id)" class="btn btn-info"
+                    style="margin-bottom: 15px">Update</button>
+                <button (click)="candidateDetails(candidate.id)" class="btn btn-primary"
+                    style="margin-bottom: 15px">View</button>
+                <button (click)="deleteCandidate(candidate.id)" class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
