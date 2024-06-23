@@ -1,0 +1,22 @@
+.dialog-container {
+    text-align: center;
+}
+
+.dialog-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dialog-title mat-icon {
+    margin-right: 8px;
+}
+
+.dialog-content {
+    margin: 16px 0;
+}
+
+.dialog-actions {
+    display: flex;
+    justify-content: space-around;
+}
