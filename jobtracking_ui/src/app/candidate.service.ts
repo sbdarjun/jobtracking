@@ -7,7 +7,7 @@ import { Candidate } from './candidate';
   providedIn: 'root',
 })
 export class CandidateService {
-  private baseURL = 'http://localhost:8080/api/v1/candidates';
+  private baseURL = 'http://3.7.108.105:8080/api/v1/candidates';
   // Injected httpClient module on CandidateService
   constructor(private httpClient: HttpClient) {}
 
