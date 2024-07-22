@@ -3,7 +3,6 @@ import { FormsModule } from '@angular/forms';
 import { Candidate } from '../candidate';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CandidateService } from '../candidate.service';
-import { data } from 'cypress/types/jquery';
 
 @Component({
   selector: 'app-candidate-details',

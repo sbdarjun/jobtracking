@@ -3,12 +3,12 @@ services:
   db:
     image: mysql:8
     container_name: mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
+    env_file:
+      - .env
     volumes:
       - db_data:/var/lib/mysql
     ports:
-      - "3306:3306"
+      - "3307:3306"
 
   backend:
     build: ./jobtracking_api
